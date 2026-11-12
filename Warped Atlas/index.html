@@ -23,7 +23,7 @@
     
     
       
-        <title>Warped Atlas - Sebastian Blogg</title>
+        <title>WarpedAtlas: An ARPG Overhaul for Terraria - Sebastian Blogg</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#warpedatlas-an-arpg-overhaul-for-terraria" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Warped Atlas
+              WarpedAtlas: An ARPG Overhaul for Terraria
             
           </span>
         </div>
@@ -220,7 +225,7 @@
   
     
   
-  Warped Atlas
+  WarpedAtlas: An ARPG Overhaul for Terraria
 
       </a>
     </li>
@@ -329,6 +334,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WarpedAtlas: An ARPG Overhaul for Terraria
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -337,7 +362,7 @@
   <span class="md-ellipsis">
     
   
-    Warped Atlas
+    WarpedAtlas: An ARPG Overhaul for Terraria
   
 
     
@@ -346,6 +371,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-vision-sandbox-meets-arpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Vision: Sandbox Meets ARPG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archetypes-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archetypes &amp; Mechanics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-architecture-terraria-as-an-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Architecture: Terraria as an Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-narrative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap &amp; Narrative
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -368,9 +456,31 @@
 
 
 
-  <h1>Warped Atlas</h1>
-
-<p>Mod Discussion Here</p>
+<h1 id="warpedatlas-an-arpg-overhaul-for-terraria">WarpedAtlas: An ARPG Overhaul for Terraria</h1>
+<p>This project acts as a culmination of my taste in games. I have hundreds of hours within Terraria and Path of Exile (PoE) respectively. These two games have captured my interest for probably longer than they should, and as such, I wanted to not only do something constructive with that passion but use it as a springboard into game creation—an aspect of programming I had long sworn off due to my fear that it might sour my desire to keep playing games.</p>
+<h2 id="the-vision-sandbox-meets-arpg">The Vision: Sandbox Meets ARPG</h2>
+<p>For the uninitiated, Terraria is a 2-D sandbox in which you can explore, build, and discover—from creating homes to slaying progressively harder creatures. Path of Exile and Diablo 2 are Action RPGs, which in my eyes are sandboxes of a different flavour. You create a character of a specific class, exploring procedurally generated levels and slowly amassing a character equipped to take down the most eldritch of horrors.</p>
+<p>My favourite aspects of these games can be boiled down to two core philosophies:
+1. Feeling tangible increases in power.
+2. The ability to build or work towards increasing this power in a specific direction.</p>
+<h2 id="archetypes-mechanics">Archetypes &amp; Mechanics</h2>
+<p>I wanted a sandbox where I could kill monsters upon monsters, explore, and create powerful characters of varying flavours. For the time being, I have mapped these to the base classes of Terraria:</p>
+<ul>
+<li><strong>Mage/Sorcerer:</strong> Specialised spell casting.</li>
+<li><strong>Summoner:</strong> Minion and pet orchestration.</li>
+<li><strong>Melee Warrior:</strong> Close-quarters combat. I have introduced <strong>Warcries and shouts</strong>, inspired by the "singer barb" archetype in Diablo 2, where you create a character that quite literally shouts their enemies to death.</li>
+<li><strong>Ranger:</strong> Gun and bow wielding. Taking inspiration from PoE, I have introduced <strong>Traps</strong> into the weapon pool—akin to a claymore or a bear trap, but much more sensitive and explosive.</li>
+</ul>
+<h2 id="technical-architecture-terraria-as-an-engine">Technical Architecture: Terraria as an Engine</h2>
+<p>For any players of Terraria that pick up my mod, they will be immediately greeted by the fact I have taken Terraria more as an engine than something designed to be played alongside other popular mods. </p>
+<p>I wanted to create a standalone experience that uses only a single dependency known as <strong>Subworlds</strong>. This enables instanced environments separated from the base game:
+* A <strong>Hubworld</strong> where the player starts and returns.
+* <strong>Instanced Dungeons</strong> a player can fight through.
+* <strong>Boss Arenas</strong> to fight the various gatekeepers that block progression from one story act to the next.</p>
+<p><strong>The Core Gameplay Loop:</strong> Looting dungeon chests (which hold randomised but tiered loot), killing monsters, allocating passives within a custom skill tree, and fighting bosses.</p>
+<h2 id="roadmap-narrative">Roadmap &amp; Narrative</h2>
+<p>Terraria doesn't natively use a very robust story NPC system; they act as basic vendors and cycle through simple dialogue. My goal is to extend the base NPC system to create a story-driven narrative where I can orchestrate cutscenes and tell a story. </p>
+<p>The current system uses custom UI, but seeks to avoid heavy visual overhauls until all required mechanics are fully fleshed out.</p>
 
 
 
